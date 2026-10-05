@@ -22,7 +22,7 @@ We aim to label/categorize the internal separating walls of the building, based 
 
 As an example, two adjacent rooms are considered in Figure 1. If rooms A and B are both classrooms, the sound insulation of the blue separating wall should be R'w ≥ 48 dB. However, if A is a classroom and B is a common area (e.g. hallway) or carpentry class, R'w ≥ 60 dB is required. Furthermore, if the wall also contains a door then the total sound insulation of the wall should be R'w ≥ 44 dB.
 
-![Figure 1: Two adjacent rooms.](figur1.png)
+![Figure 1: Two adjacent rooms.](images/figur1.png)
 **Figure 1: Two adjacent rooms.**
 
 Thus, manually assigning the correct sound insulation requirement to every internal wall can be a repetitive and time-consuming process. It will therefore be useful to automate this process, to support acoustic design and provide a more consistent basis for wall construction design.
@@ -66,7 +66,7 @@ For this reason, the use case of our tool could be more accurately described as 
 ## BPMN-diagram for the use case
 
 Since the wall is a multidisciplinary building element, it is required to assess results from other disciplines, especially Materials. This is marked in the BPMN-diagram with green.
-![Figure 2: BPMN diagram for the use case.](diagram.svg)
+![Figure 2: BPMN diagram for the use case.](images/diagram.svg)
 # A2d - Scope the use case
 
 A new tool is needed to label the interior separating walls accordingly with the sound insulation requirements in BR18 §368 - §376. This part of the BPMN-diagram is highlighted in yellow.
