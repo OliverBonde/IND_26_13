@@ -23,7 +23,6 @@ We aim to label/categorize the internal separating walls of the building, based 
 As an example, two adjacent rooms are considered in Figure 1. If rooms A and B are both classrooms, the sound insulation of the blue separating wall should be R'w ≥ 48 dB. However, if A is a classroom and B is a common area (e.g. hallway) or carpentry class, R'w ≥ 60 dB is required. Furthermore, if the wall also contains a door then the total sound insulation of the wall should be R'w ≥ 44 dB.
 
 ![Figure 1: Two adjacent rooms.](images/figure1.png)
-**Figure 1: Two adjacent rooms.**
 
 Thus, manually assigning the correct sound insulation requirement to every internal wall can be a repetitive and time-consuming process. It will therefore be useful to automate this process, to support acoustic design and provide a more consistent basis for wall construction design.
 
