@@ -140,14 +140,6 @@ Write the idea down in one sentence, together with the parameters it uses and th
 
 ---
 
-## Peer testing and feedback
-
-**TODO** after Show & Tell: who tested the tutorial, what was unclear, and what we changed. This feeds the reflection in A5.
-
-| Tester | Date | What worked | What was unclear | Change made |
-|---|---|---|---|---|
-| **TODO** | | | | |
-
 ## AI acknowledgement
 
 This tutorial was written from our own project notes, with help from Claude for structure and wording.
