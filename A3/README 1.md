@@ -1,6 +1,6 @@
 # A3: Teach
 
-**Group 13** · Focus area: Indoor & Energy / Acoustic / Daylight
+**Group 13** · Focus area: Indoor & Energy -> Acoustic
 
 ## Title
 
