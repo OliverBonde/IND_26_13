@@ -1,0 +1,355 @@
+{
+  "space_count": 70,
+  "spaces": [
+    {
+      "globalid": "3SIDVtMID5MAPa0EsdTtg5",
+      "name": "101",
+      "long_name": "Materials library"
+    },
+    {
+      "globalid": "3SIDVtMID5MAPa0EsdTtg9",
+      "name": "102",
+      "long_name": "15 people MR"
+    },
+    {
+      "globalid": "3SIDVtMID5MAPa0EsdTtgG",
+      "name": "103",
+      "long_name": "15 people MR"
+    },
+    {
+      "globalid": "0$4YSBUv10SQBRbNHStqYj",
+      "name": "104",
+      "long_name": "Hallway"
+    },
+    {
+      "globalid": "0$4YSBUv10SQBRbNHStqXK",
+      "name": "105",
+      "long_name": "boots"
+    },
+    {
+      "globalid": "0$4YSBUv10SQBRbNHStqsH",
+      "name": "107",
+      "long_name": "Boots"
+    },
+    {
+      "globalid": "0$4YSBUv10SQBRbNHStqsP",
+      "name": "108",
+      "long_name": "Hallway"
+    },
+    {
+      "globalid": "0$4YSBUv10SQBRbNHStq76",
+      "name": "110",
+      "long_name": "Bike parking"
+    },
+    {
+      "globalid": "0$4YSBUv10SQBRbNHStq71",
+      "name": "111",
+      "long_name": "Storage"
+    },
+    {
+      "globalid": "0$4YSBUv10SQBRbNHStq7m",
+      "name": "113",
+      "long_name": "Office"
+    },
+    {
+      "globalid": "0$4YSBUv10SQBRbNHStq7x",
+      "name": "114",
+      "long_name": "Office"
+    },
+    {
+      "globalid": "0$4YSBUv10SQBRbNHStq6H",
+      "name": "115",
+      "long_name": "Office"
+    },
+    {
+      "globalid": "0$4YSBUv10SQBRbNHStq49",
+      "name": "116",
+      "long_name": "shower/changing area"
+    },
+    {
+      "globalid": "0$4YSBUv10SQBRbNHStq4_",
+      "name": "117",
+      "long_name": "WC"
+    },
+    {
+      "globalid": "0$4YSBUv10SQBRbNHStq4v",
+      "name": "118",
+      "long_name": "WC"
+    },
+    {
+      "globalid": "0HaSfEPT12Ih0q_mge7rr3",
+      "name": "123",
+      "long_name": "Auditorium (200 pepole)"
+    },
+    {
+      "globalid": "0HaSfEPT12Ih0q_mge7rrR",
+      "name": "124",
+      "long_name": "Multi purpose area"
+    },
+    {
+      "globalid": "1kEW68D6X6pRqLavO2aIQB",
+      "name": "125",
+      "long_name": "15 people MR"
+    },
+    {
+      "globalid": "1kEW68D6X6pRqLavO2aIQ5",
+      "name": "127",
+      "long_name": "Hallway"
+    },
+    {
+      "globalid": "1kEW68D6X6pRqLavO2aITI",
+      "name": "129",
+      "long_name": "cafe (50 people)"
+    },
+    {
+      "globalid": "1kEW68D6X6pRqLavO2aIku",
+      "name": "130",
+      "long_name": "WC"
+    },
+    {
+      "globalid": "1kEW68D6X6pRqLavO2aIkx",
+      "name": "131",
+      "long_name": "handicap WC"
+    },
+    {
+      "globalid": "1kEW68D6X6pRqLavO2aIk_",
+      "name": "132",
+      "long_name": "Office"
+    },
+    {
+      "globalid": "11KEq7HgL0ihrYxsFknEQM",
+      "name": "147",
+      "long_name": "Office"
+    },
+    {
+      "globalid": "2C0IZ1tzL8WuiOXLj9Qj7C",
+      "name": "154",
+      "long_name": "6 people MR"
+    },
+    {
+      "globalid": "2C0IZ1tzL8WuiOXLj9QjD3",
+      "name": "155",
+      "long_name": "6 people MR"
+    },
+    {
+      "globalid": "3XZMc9bKX8vguzQkZZ1Vq0",
+      "name": "156",
+      "long_name": "Office"
+    },
+    {
+      "globalid": "0j$evtBUfE58Mp77fcfSUh",
+      "name": "173",
+      "long_name": "6 people MR"
+    },
+    {
+      "globalid": "0GoVGjSX1BPB$Fz6byKDZh",
+      "name": "183",
+      "long_name": "Tech"
+    },
+    {
+      "globalid": "2OiebDOeH6u8q2VtqWp6bj",
+      "name": "184",
+      "long_name": "shower/change"
+    },
+    {
+      "globalid": "1uq$MPRbb6PR8swzLzZexX",
+      "name": "185",
+      "long_name": "AHU 4B flexible places"
+    },
+    {
+      "globalid": "0VusiaP0j9quQoumjUX0qa",
+      "name": "186",
+      "long_name": "Office"
+    },
+    {
+      "globalid": "0VusiaP0j9quQoumjUX0qj",
+      "name": "187",
+      "long_name": "escape stair/elevator"
+    },
+    {
+      "globalid": "0VusiaP0j9quQoumjUX0rq",
+      "name": "189",
+      "long_name": "Foyer"
+    },
+    {
+      "globalid": "0VusiaP0j9quQoumjUX0ry",
+      "name": "190",
+      "long_name": "Hallway"
+    },
+    {
+      "globalid": "0VusiaP0j9quQoumjUX0rb",
+      "name": "191",
+      "long_name": "Tech"
+    },
+    {
+      "globalid": "0VusiaP0j9quQoumjUX0rc",
+      "name": "192",
+      "long_name": "Tech"
+    },
+    {
+      "globalid": "0VusiaP0j9quQoumjUX0rh",
+      "name": "193",
+      "long_name": "Tech"
+    },
+    {
+      "globalid": "0VusiaP0j9quQoumjUX0ri",
+      "name": "194",
+      "long_name": "Tech"
+    },
+    {
+      "globalid": "0VusiaP0j9quQoumjUX0rH",
+      "name": "195",
+      "long_name": "Tech"
+    },
+    {
+      "globalid": "0VusiaP0j9quQoumjUX0rI",
+      "name": "196",
+      "long_name": "Tech"
+    },
+    {
+      "globalid": "0VusiaP0j9quQoumjUX0rN",
+      "name": "197",
+      "long_name": "Tech"
+    },
+    {
+      "globalid": "0VusiaP0j9quQoumjUX0mK",
+      "name": "198",
+      "long_name": "Reception/Atrium"
+    },
+    {
+      "globalid": "0VusiaP0j9quQoumjUX0nK",
+      "name": "199",
+      "long_name": "Office"
+    },
+    {
+      "globalid": "0VusiaP0j9quQoumjUX0nA",
+      "name": "200",
+      "long_name": "Office"
+    },
+    {
+      "globalid": "0VusiaP0j9quQoumjUX0iX",
+      "name": "201",
+      "long_name": "6 people MR"
+    },
+    {
+      "globalid": "0VusiaP0j9quQoumjUX0iY",
+      "name": "202",
+      "long_name": "Office"
+    },
+    {
+      "globalid": "0VusiaP0j9quQoumjUX0jP",
+      "name": "203",
+      "long_name": "Courtyard"
+    },
+    {
+      "globalid": "0VusiaP0j9quQoumjUX0en",
+      "name": "205",
+      "long_name": "studen area"
+    },
+    {
+      "globalid": "0VusiaP0j9quQoumjUX0ev",
+      "name": "206",
+      "long_name": "hallway"
+    },
+    {
+      "globalid": "0VusiaP0j9quQoumjUX0eW",
+      "name": "207",
+      "long_name": "Boots"
+    },
+    {
+      "globalid": "0VusiaP0j9quQoumjUX0eb",
+      "name": "208",
+      "long_name": "Tech"
+    },
+    {
+      "globalid": "3rlkYoaTb34PtNhuH$Rfv$",
+      "name": "225",
+      "long_name": "25 people MR"
+    },
+    {
+      "globalid": "3rlkYoaTb34PtNhuH$RsAB",
+      "name": "247",
+      "long_name": "Office"
+    },
+    {
+      "globalid": "3rlkYoaTb34PtNhuH$RsAN",
+      "name": "248",
+      "long_name": "6 people MR"
+    },
+    {
+      "globalid": "3rlkYoaTb34PtNhuH$RsAK",
+      "name": "249",
+      "long_name": "Office"
+    },
+    {
+      "globalid": "3rlkYoaTb34PtNhuH$RsAH",
+      "name": "250",
+      "long_name": "Office"
+    },
+    {
+      "globalid": "3rlkYoaTb34PtNhuH$RsAU",
+      "name": "251",
+      "long_name": "Office"
+    },
+    {
+      "globalid": "3rlkYoaTb34PtNhuH$RsAR",
+      "name": "252",
+      "long_name": "Office"
+    },
+    {
+      "globalid": "3rlkYoaTb34PtNhuH$RsMZ",
+      "name": "253",
+      "long_name": "Office"
+    },
+    {
+      "globalid": "3rlkYoaTb34PtNhuH$RsIl",
+      "name": "254",
+      "long_name": "Office"
+    },
+    {
+      "globalid": "3rlkYoaTb34PtNhuH$RsVH",
+      "name": "255",
+      "long_name": "Office"
+    },
+    {
+      "globalid": "3rlkYoaTb34PtNhuH$RsVQ",
+      "name": "256",
+      "long_name": "Office"
+    },
+    {
+      "globalid": "3rlkYoaTb34PtNhuH$RsUd",
+      "name": "257",
+      "long_name": "Office"
+    },
+    {
+      "globalid": "3rlkYoaTb34PtNhuH$RsS5",
+      "name": "258",
+      "long_name": "Office"
+    },
+    {
+      "globalid": "3rlkYoaTb34PtNhuH$RsSF",
+      "name": "259",
+      "long_name": "15 people MR"
+    },
+    {
+      "globalid": "3rlkYoaTb34PtNhuH$RsSC",
+      "name": "260",
+      "long_name": "15 people MR"
+    },
+    {
+      "globalid": "3rlkYoaTb34PtNhuH$RsSR",
+      "name": "261",
+      "long_name": "Hallway"
+    },
+    {
+      "globalid": "3rlkYoaTb34PtNhuH$RsRa",
+      "name": "262",
+      "long_name": "Hallway"
+    },
+    {
+      "globalid": "1TixYcnIvCMg$qTJIIGD8_",
+      "name": "263",
+      "long_name": "Tech"
+    }
+  ]
+}
