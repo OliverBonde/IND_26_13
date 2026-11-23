@@ -7,13 +7,14 @@
 
 ### The claim
 
-The designers of building 2601 claim that the internal separating walls comply with the sound insulation requirements in BR18 §368–§376 (see our A2).
+**Claim to investigate:** *The designers of the building claim that the current internal separating walls, in the IFC-model, comply with the acoustic requirements of BR18 §368 - §376 for sound transmission between rooms.* (from A2)
 
-**Where we found it:** [ADD: Advanced Building Design report, section/page]
 
 ### The problem
 
-To design a wall, you first need to know how much sound insulation (R'w) it must provide. In BR18 this depends on what the rooms on either side are used for, whether they are side by side or above each other, and whether there is a door between them. Working this out by hand for every room pair in a large building is slow and easy to get wrong.
+The problem addressed by our tool is to assist acoustic engineers in the task of classifying walls according to the sound insulation requirements defined in the Danish Building Regulations. This process can be highly repetitive, particularly in large buildings containing hundreds of walls. Therefore, we identified significant potential for improving efficiency and optimizing the workflow.
+
+In BR18 this depends on what the rooms on either side are used for, whether they are side by side or above each other, and whether there is a door between them. Working this out by hand for every room pair in a large building is slow and easy to get wrong.
 
 Examples from BR18, guidance for educational buildings, section 3.2, Table 3.1:
 
