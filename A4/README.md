@@ -3,7 +3,7 @@
 **Course:** 41934 Advanced Building Information Modeling (BIM)  
 **Focus area:** Building acoustics / architectural design  
 **Tool:** IFC Room Classifier — BR18 R'w Requirements (v7.5)  
-**Group:** 13
+**Group:** 13 <br>
 **Case model:** `26-01-D-ARCH.ifc` (demonstration model; **not included in the repository**)
 
 > **Submission status:** Draft ready for screenshots, references to the group's original A1/A2 submission, and BPMN diagrams. Values in square brackets must be completed from an actual run. This tool determines **required** airborne sound insulation; it does not measure or verify the **achieved** sound insulation of walls or slabs.
