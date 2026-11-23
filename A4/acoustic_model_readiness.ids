@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ids xmlns="http://standards.buildingsmart.org/IDS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+    <info>
+        <title>Acoustic model readiness (BR18 R'w requirement tool)</title>
+        <copyright>GPL-3.0</copyright>
+        <version>1.0</version>
+        <description>Preflight check: does the IFC model contain the basic information the group 13 acoustic tool needs?</description>
+        <author>s263857@dtu.dk</author>
+        <date>2026-11-23</date>
+        <purpose>Preflight before running the room-to-wall acoustic requirement analysis</purpose>
+        <milestone>Design stage</milestone>
+    </info>
+    <specifications>
+        <specification name="Rooms with a name" ifcVersion="IFC2X3 IFC4 IFC4X3_ADD2" identifier="AC-01" description="The model must contain at least one IfcSpace, and every IfcSpace must have a Name." instructions="Model every room as an IfcSpace and give it a Name (room number or label).">
+            <applicability minOccurs="1" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSPACE</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="Building storeys with a name" ifcVersion="IFC2X3 IFC4 IFC4X3_ADD2" identifier="AC-02" description="The model must contain at least one IfcBuildingStorey, and every storey must have a Name." instructions="Model each level as an IfcBuildingStorey and give it a Name.">
+            <applicability minOccurs="1" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="Walls present" ifcVersion="IFC2X3 IFC4 IFC4X3_ADD2" identifier="AC-03" description="The model must contain at least one IfcWall." instructions="Model separating walls as IfcWall.">
+            <applicability minOccurs="1" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCWALL</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required">
+                    <name>
+                        <simpleValue>GlobalId</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+    </specifications>
+</ids>
