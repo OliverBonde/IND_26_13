@@ -3,7 +3,7 @@
 **Course:** 41934 Advanced Building Information Modeling (BIM)  
 **Focus area:** Building acoustics / architectural design  
 **Tool:** IFC Room Classifier — BR18 R'w Requirements (v7.5)  
-**Group:** 13 <br>
+**Group:** 13
 **Case model:** `26-01-D-ARCH.ifc` (demonstration model; **not included in the repository**)
 
 > **Submission status:** Draft ready for screenshots, references to the group's original A1/A2 submission, and BPMN diagrams. Values in square brackets must be completed from an actual run. This tool determines **required** airborne sound insulation; it does not measure or verify the **achieved** sound insulation of walls or slabs.
@@ -12,11 +12,8 @@
 
 ### 1.1 Problem / claim
 
-**Claim to investigate:** *The required apparent weighted airborne sound insulation (R'w) of room-separating building elements in an educational building can be determined consistently from the functions of adjacent spaces, their separation type and relevant door/partition conditions, using BR18.*
+**Claim to investigate:** *The designers of the building claim that the current internal separating walls, in the IFC-model, comply with the acoustic requirements of BR18 §368 - §376 for sound transmission between rooms.* (from A2)
 
-Before a separating wall or floor can be designed, the acoustic requirement for the particular pair of adjacent rooms must be known. In a large IFC model this involves identifying room functions, finding actual shared boundaries, checking doors and special cases, and applying the relevant row of **BR18, section 3.2, Table 3.1**. This is laborious and vulnerable to omissions if performed manually for many room pairs.
-
-The objective is **not** to demonstrate that the as-built wall achieves its required R'w. Instead, the tool provides a model-based, traceable **design requirement** for each supported room separation, together with cases that need professional assessment.
 
 ### 1.2 Where the problem was identified
 
