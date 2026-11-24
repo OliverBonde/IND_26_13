@@ -84,28 +84,23 @@ Figure 3. Space overview and room category assignment interface.
 
 Using the drop-down menu at the bottom of the right side of the figure below, the rooms may be categorized based on their function. 
 
-The example in the figure below is not related to the actual building in `26-01-D-ARCH.ifc`, as this also includes offices and other functions that are not covered in [BR18 §368 – §376 Guidelines for Educational Buildings](https://www.bygningsreglementet.dk/tekniske-bestemmelser/17/vejledninger/undervisningsbygninger/). Rather, it's an example demonstration of the tool.
+The example shown in the figure below is intended solely to demonstrate the tool's functionality. The IFC model (`26-01-D-ARCH.ifc`) contains offices and other room functions that are not covered in [BR18 §368 – §376 Guidelines for Educational Buildings](https://www.bygningsreglementet.dk/tekniske-bestemmelser/17/vejledninger/undervisningsbygninger/). Therefore, the example should not be interpreted as an assessment of `26-01-D-ARCH.ifc`'s actual compliance with these requirements.
 
-**Note that** not all rooms must be categorized as the tool only looks at the rooms that are categorized. That is, the tool can easily be used to just determine the R'w requirement between to adjacent rooms or for all interior separating walls.
-
+**Note:** Not all spaces need to be categorized. The tool analyzes only categorized spaces and their adjacent rooms, allowing the user to determine the required R'w for a single room pair, a selected group of rooms, or all relevant interior separating walls.
 
 ![Figure 4. Plan view displaying spaces and building elements.](images/5.png)
 
 Figure 4. Plan view displaying spaces and building elements.
 
-For educational buildings, the following room categories/functions are used in the tool, based on [BR18 §368 – §376 Guidelines for Educational Buildings](https://www.bygningsreglementet.dk/tekniske-bestemmelser/17/vejledninger/undervisningsbygninger/definitioner-af-rumtyper-for-undervisningsbygninger/#5036b98b-248e-48ea-8f22-d081436c63b7):
+For educational buildings, the following room categories/functions are used in the tool, based on [BR18 §368 – §376 Guidelines for Educational Buildings section 3.1 and 3.2](https://www.bygningsreglementet.dk/tekniske-bestemmelser/17/vejledninger/undervisningsbygninger/definitioner-af-rumtyper-for-undervisningsbygninger/#5036b98b-248e-48ea-8f22-d081436c63b7):
 
 - **Teaching Rooms (Undervisningsrum)** – Classrooms, offices, group rooms, auditoriums, libraries, etc.
 - **Common Areas (Fællesrum)** – Corridors, stairwells, canteens, toilets, technical rooms, etc.
 - **Open-Plan Teaching Areas (Åbne undervisningsområder)** – Areas where multiple classes or groups are taught without being separated into enclosed rooms.
-- **Woodworking Classrooms (Sløjdundervisningsrum)** – Rooms used for woodworking activities.
-- **Music and Singing Classrooms (Sang- og musikundervisningsrum)** – Rooms used for music and singing activities.
-- **External Units/Institutions (Eksterne enheder/institutioner)** – Adjacent premises belonging to businesses or other institutions.
-
-The first three categories are defined in BR18 Section 3.1, while the remaining categories are distinguished in the tool to account for specific sound insulation requirements in Section 3.2, Table 3.1.
-
-Spaces can also be left **Uncategorized (Ikke kategoriseret)** if their intended function has not yet been determined.
-
+- **Woodworking Classrooms (Sløjdundervisningsrum)** 
+- **Music and Singing Classrooms (Sang- og musikundervisningsrum)** 
+- **External Units/Institutions (Eksterne enheder/institutioner)** – Adjacent rooms belonging to businesses or other institutions.
+- **Uncategorized (ikke kategoriseret)** – For rooms that aren't examined or have a function yet.
 
 ### <ins>Step 5: Calculate Acoustic Requirements
 
