@@ -1,7 +1,10 @@
 # A4: Tool – Acoustic requirement classification (BR18)
 
-**Group 13** (IND_26_13) · Indoor & Energy / Acoustic / Daylight · Analysts
-**Test model:** `26-01-D-ARCH.ifc` (building 2601). The model is **not** in this repository.
+**Course:** 41934 Advanced Building Information Modeling (BIM)  
+**Focus area:** Building acoustics / architectural design  
+**Tool:** NEW TITEL!!! IFC Room Classifier — BR18 R'w Requirements <br>
+**Group:** 13 <br>
+**Case model:** `26-01-D-ARCH.ifc`, however the tools works on any IFC.
 
 ## 1. About the tool
 
@@ -15,6 +18,25 @@
 ### What the Tool Does and How It Is Used
 
 The tool relies heavily on user input and is therefore intended to support, rather than replace, the acoustic engineer. It provides an overview of the IFC building model, allowing the user to assign the appropriate function and usage category to each room or space. Based on this information, the tool automatically analyzes the building model and determines the relevant acoustic requirements in accordance with BR18.
+
+#### Step 0: Before Running the Tool
+
+Ensure that **Python 3.10 or newer** is installed. Visual Studio Code (VS Code) with the Python extension is recommended.
+
+Place all the provided Python files in the **same folder**, with `main.py` as the entry point.
+
+Install the required Python packages by running the following command in the terminal:
+
+```powershell
+python -m pip install ifcopenshell shapely reportlab
+```
+
+- `ifcopenshell` – IFC model processing
+- `shapely` – Geometric analysis and visualization
+- `reportlab` – PDF export
+
+Once the packages are installed, the tool is ready to run as described in the following sections.
+
 
 #### Step 1: Run `main.py` and Load the IFC Model
 
