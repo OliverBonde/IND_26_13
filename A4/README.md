@@ -104,9 +104,13 @@ For educational buildings, the following room categories/functions are used in t
 
 ### <ins>Step 5: Calculate Acoustic Requirements
 
-Once all spaces have been categorized, the calculation process can begin. This automated procedure evaluates the applicable acoustic requirements defined in BR18 and determines the required airborne sound insulation performance between adjacent rooms and spaces.
+Once the rooms have been categorized, press "Calculate Required R'w" to evaluate the applicable acoustic requirements for airborne sound insulation in accordance with BR18 §368 – §376.
 
-![Figure 5. Calculation of acoustic requirements based on the assigned room categories.](images/6.png)
+The outcome of this is firsly the table shown in the figure below. Here each room-pair is listed by the room number and its categorized function as well as the separation type, required R'w (i.e. the result of the calculations) and the applicable BR18 rule following [BR18 §368 – §376 Guidelines for Educational Buildings, Table 3.1](https://www.bygningsreglementet.dk/tekniske-bestemmelser/17/vejledninger/undervisningsbygninger/lydisolation-for-undervisningsbygninger/#127bd002-d895-4fe3-b7c5-41d10afcf285)
+
+*Horizontal separation type means that the rooms are adjacent on the same floor (i.e. they share at least one wall).*
+
+![Figure 5. Calculation of acoustic requirements based on the assigned room functions.](images/6.png)
 
 Figure 5. Calculation of acoustic requirements based on the assigned room categories.
 
