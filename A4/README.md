@@ -62,7 +62,7 @@ Figure 5. Calculation of acoustic requirements based on the assigned room catego
 
 After the calculations have been completed, the results can be visualized directly in the plan view. The data can also be exported for further documentation, review, and integration into the acoustic design process.
 
-![Figure 6. Visualization and export of calculated acoustic requirements.](images/7.png)
+![Figure 6. Visualization and export of calculated acoustic requirements.](images/7.svg)
 
 Figure 6. Visualization and export of calculated acoustic requirements.
 
