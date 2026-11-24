@@ -38,7 +38,7 @@ Figure 3. Select levels to include from dialog.
 
 The program displays all spaces identified in the IFC model, together with their associated level, area, room number, and room name. This information assists the user in determining the appropriate space category. However, it remains the responsibility of the user to assess the intended room function and select the correct category from the drop-down menu.
 
-![Figure 3. Space overview and room category assignment interface.]image−3.pngimage-3.pngimage−3.png
+![Figure 3. Space overview and room category assignment interface.](images/4.png)
 
 Figure 3. Space overview and room category assignment interface.
 
