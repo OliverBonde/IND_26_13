@@ -17,35 +17,39 @@
 
 #### Where the problem / claim was indentified 
 
-The problem/claim isn't found in a particular IFC-file, since no measured/tested wall performance has been supplied/calculated. Instead, the sound insulation requirements for interior separating walls in a given IFC-file is established.
+The problem/claim isn't found in a particular IFC-file, since no measured/tested wall performance has been supplied/calculated. Instead, the sound insulation requirements for interior separating walls in a given IFC-file are established.
 
 
 ### What the Tool Does and How It Is Used
 
-The tool relies heavily on user input and is therefore intended to support, rather than replace, the acoustic engineer. It provides an overview of the IFC building model, allowing the user to assign the appropriate function and usage category to each room or space. Based on this information, the tool automatically analyzes the building model and determines the relevant acoustic requirements in accordance with BR18.
+The tool relies heavily on user input and is therefore intended to support, rather than replace, the acoustician. It provides an overview of the IFC building model, allowing the user to assign the appropriate function (e.g. teaching room) to each room (i.e. IfcSpace). Based on this information, the tool automatically analyzes the building model and determines the relevant acoustic requirements for airborne sound insulation (R'w) in accordance with [BR18 §368 – §376 Guidelines for Educational Buildings](https://www.bygningsreglementet.dk/tekniske-bestemmelser/17/vejledninger/undervisningsbygninger/).
+
+## How to run the tool
 
 ### <ins>Step 0: Before Running the Tool</ins>
 
-Ensure that **Python 3.10 or newer** is installed. Visual Studio Code (VS Code) with the Python extension is recommended.
+1. Ensure that **Python 3.10 or newer** is installed. We recommend using an IDE (e.g. VS Code) with the Python extension to run the tool.
 
-Place all the provided Python files in the **same folder**, with `main.py` as the entry point.
+2. Place all the provided Python files in the same folder.
 
-Install the required Python packages by running the following command in the terminal:
+3. Install the required Python packages by running the following command in the terminal:
 
-```powershell
-python -m pip install ifcopenshell shapely reportlab
-```
+   ```powershell
+   python -m pip install ifcopenshell shapely reportlab
+   ```
 
-- `ifcopenshell` – IFC model processing
-- `shapely` – Geometric analysis and visualization
-- `reportlab` – PDF export
+   The required packages are:
+   - `ifcopenshell` – IFC model processing
+   - `shapely` – Geometric analysis and visualization
+   - `reportlab` – PDF export
 
-Once the packages are installed, the tool is ready to run as described in the following sections.
+4. Once the packages are installed, the tool is ready to run using `main.py`, as described in the following sections.
 
 
-### <ins>Step 1: Run `main.py` and Load the IFC Model
 
-Start the program and wait for the user interface to appear. Once the interface is loaded, select Open IFC File and choose the appropriate IFC model.
+### <ins>Step 1: Run `main.py` and Load an IFC Model
+
+Start by running `main.py` and once the user interface is loaded, select Open IFC File and choose the an IFC model of your choosing.
 
 ![Figure 1: Run.](images/1.png)
 Figure 1. Run main.py to start program
@@ -55,27 +59,53 @@ Figure 2. [Open IFC file] and load IFC.
 
 ### <ins>Step 2: Select Levels to Include
 
-The program prompts the user to select which building levels should be included in the analysis. This step is necessary because IFC models may contain unused levels that are not relevant to the project. The tool displays the spaces associated with each identified level to assist the user in making the correct selection.
+The program prompts the user to select which building levels should be included in the analysis. This step is necessary because IFC models may contain unused levels, that are not relevant to the project.  Initially, only the levels including at least one space are selected. Additionally, the tool displays the number of spaces associated with each level to assist the user in making the correct selection.
 
 ![Figure 3: Levels.](images/3.png)
 
 Figure 3. Select levels to include from dialog.
 
-### <ins>Step 3: Assign a Room Category to Each Space
+### <ins>Step 3: Assign a foom function to each space
 
-The program displays all spaces identified in the IFC model, together with their associated level, area, room number, and room name. This information assists the user in determining the appropriate space category. However, it remains the responsibility of the user to assess the intended room function and select the correct category from the drop-down menu.
+
+Once the desired levels are selected, the table on the right side of the figure below appears. Here, all IFC-spaces are listed with their associated number, level, description and area. This information assists the user in determining the appropriate BR18 function for the space. However, it remains the responsibility of the user to assess the intended room function and select the correct function from the drop-down menu at the bottom of the window. The descriptions, provided by the architect, serve as guidance for the acoustician when assigning the appropriate BR18 room function.
+
+To help the user identify and locate spaces within the building, the tool generates floor plans (see the left side of the figure below) from the IFC model when "Show Floor Plan" is selected. These floor plans are created by extracting the 3D geometry of spaces and building elements, such as walls and doors, and generating horizontal sections at each selected level.
+
+The floor plans are linked to the room classification table, allowing users to select and highlight spaces in either view. This makes it easier to understand the relationships between rooms and assign the appropriate BR18 functions.
+
 
 ![Figure 3. Space overview and room category assignment interface.](images/4.png)
 
 Figure 3. Space overview and room category assignment interface.
 
-### <ins>Step 4: Use the Plan View to Complete the Categorization
 
-Open the plan view within the program. A new window will display the selected building level, including walls, doors, windows, and spaces. The plan view works together with the space list, helping the user understand the location and context of each room within the building and thereby supporting the categorization process.
+### <ins>Step 4: Complete the Categorization of the Rooms
+
+Using the drop-down menu at the bottom of the right side of the figure below, the rooms may be categorized based on their function. 
+
+The example in the figure below is not related to the actual building in `26-01-D-ARCH.ifc`, as this also includes offices and other functions that are not covered in [BR18 §368 – §376 Guidelines for Educational Buildings](https://www.bygningsreglementet.dk/tekniske-bestemmelser/17/vejledninger/undervisningsbygninger/). Rather, it's an example demonstration of the tool.
+
+**Note that** not all rooms must be categorized as the tool only looks at the rooms that are categorized. That is, the tool can easily be used to just determine the R'w requirement between to adjacent rooms or for all interior separating walls.
+
 
 ![Figure 4. Plan view displaying spaces and building elements.](images/5.png)
 
 Figure 4. Plan view displaying spaces and building elements.
+
+For educational buildings, the following room categories/functions are used in the tool, based on [BR18 §368 – §376 Guidelines for Educational Buildings](https://www.bygningsreglementet.dk/tekniske-bestemmelser/17/vejledninger/undervisningsbygninger/definitioner-af-rumtyper-for-undervisningsbygninger/#5036b98b-248e-48ea-8f22-d081436c63b7):
+
+- **Teaching Rooms (Undervisningsrum)** – Classrooms, offices, group rooms, auditoriums, libraries, etc.
+- **Common Areas (Fællesrum)** – Corridors, stairwells, canteens, toilets, technical rooms, etc.
+- **Open-Plan Teaching Areas (Åbne undervisningsområder)** – Areas where multiple classes or groups are taught without being separated into enclosed rooms.
+- **Woodworking Classrooms (Sløjdundervisningsrum)** – Rooms used for woodworking activities.
+- **Music and Singing Classrooms (Sang- og musikundervisningsrum)** – Rooms used for music and singing activities.
+- **External Units/Institutions (Eksterne enheder/institutioner)** – Adjacent premises belonging to businesses or other institutions.
+
+The first three categories are defined in BR18 Section 3.1, while the remaining categories are distinguished in the tool to account for specific sound insulation requirements in Section 3.2, Table 3.1.
+
+Spaces can also be left **Uncategorized (Ikke kategoriseret)** if their intended function has not yet been determined.
+
 
 ### <ins>Step 5: Calculate Acoustic Requirements
 
