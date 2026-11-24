@@ -46,7 +46,7 @@ Figure 3. Space overview and room category assignment interface.
 
 Open the plan view within the program. A new window will display the selected building level, including walls, doors, windows, and spaces. The plan view works together with the space list, helping the user understand the location and context of each room within the building and thereby supporting the categorization process.
 
-![Figure 4. Plan view displaying spaces and building elements.]image−4.pngimage-4.pngimage−4.png
+![Figure 4. Plan view displaying spaces and building elements.](images\5.png)
 
 Figure 4. Plan view displaying spaces and building elements.
 
@@ -54,7 +54,7 @@ Figure 4. Plan view displaying spaces and building elements.
 
 Once all spaces have been categorized, the calculation process can begin. This automated procedure evaluates the applicable acoustic requirements defined in BR18 and determines the required airborne sound insulation performance between adjacent rooms and spaces.
 
-![Figure 5. Calculation of acoustic requirements based on the assigned room categories.]image−5.pngimage-5.pngimage−5.png
+![Figure 5. Calculation of acoustic requirements based on the assigned room categories.](images\6.png)
 
 Figure 5. Calculation of acoustic requirements based on the assigned room categories.
 
@@ -62,7 +62,7 @@ Figure 5. Calculation of acoustic requirements based on the assigned room catego
 
 After the calculations have been completed, the results can be visualized directly in the plan view. The data can also be exported for further documentation, review, and integration into the acoustic design process.
 
-![Figure 6. Visualization and export of calculated acoustic requirements.]image−6.pngimage-6.pngimage−6.png
+![Figure 6. Visualization and export of calculated acoustic requirements.](images\7.png)
 
 Figure 6. Visualization and export of calculated acoustic requirements.
 
