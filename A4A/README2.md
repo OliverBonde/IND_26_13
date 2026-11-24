@@ -12,64 +12,58 @@
 
 ### The problem
 
-
-What the Tool Does and How It Is Used
+### What the Tool Does and How It Is Used
 
 The tool relies heavily on user input and is therefore intended to support, rather than replace, the acoustic engineer. It provides an overview of the IFC building model, allowing the user to assign the appropriate function and usage category to each room or space. Based on this information, the tool automatically analyzes the building model and determines the relevant acoustic requirements in accordance with BR18.
 
-Step 1: Run main.py and Load the IFC Model
+#### Step 1: Run `main.py` and Load the IFC Model
 
 Start the program and wait for the user interface to appear. Once the interface is loaded, select Open IFC File and choose the appropriate IFC model.
 
-images/figure1.png
+![Figure 1. Main window with the IFC import functionality highlighted.]image−1.pngimage-1.pngimage−1.png
 
 Figure 1. Main window with the IFC import functionality highlighted.
 
-Step 2: Select Levels to Include
+#### Step 2: Select Levels to Include
 
 The program prompts the user to select which building levels should be included in the analysis. This step is necessary because IFC models may contain unused levels that are not relevant to the project. The tool displays the spaces associated with each identified level to assist the user in making the correct selection.
 
-images/figure2.png
+![Figure 2. Dialog showing the identified levels and associated spaces.]image−2.pngimage-2.pngimage−2.png
 
 Figure 2. Dialog showing the identified levels and associated spaces.
 
-Step 3: Assign a Room Category to Each Space
+#### Step 3: Assign a Room Category to Each Space
 
 The program displays all spaces identified in the IFC model, together with their associated level, area, room number, and room name. This information assists the user in determining the appropriate space category. However, it remains the responsibility of the user to assess the intended room function and select the correct category from the drop-down menu.
 
-images/figure3.png
+![Figure 3. Space overview and room category assignment interface.]image−3.pngimage-3.pngimage−3.png
 
 Figure 3. Space overview and room category assignment interface.
 
-Step 4: Use the Plan View to Complete the Categorization
+#### Step 4: Use the Plan View to Complete the Categorization
 
 Open the plan view within the program. A new window will display the selected building level, including walls, doors, windows, and spaces. The plan view works together with the space list, helping the user understand the location and context of each room within the building and thereby supporting the categorization process.
 
-images/figure4.png
+![Figure 4. Plan view displaying spaces and building elements.]image−4.pngimage-4.pngimage−4.png
 
 Figure 4. Plan view displaying spaces and building elements.
 
-Step 5: Calculate Acoustic Requirements
+#### Step 5: Calculate Acoustic Requirements
 
 Once all spaces have been categorized, the calculation process can begin. This automated procedure evaluates the applicable acoustic requirements defined in BR18 and determines the required airborne sound insulation performance between adjacent rooms and spaces.
 
-images/figure5.png
+![Figure 5. Calculation of acoustic requirements based on the assigned room categories.]image−5.pngimage-5.pngimage−5.png
 
 Figure 5. Calculation of acoustic requirements based on the assigned room categories.
 
-Step 6: Review and Export Results
+#### Step 6: Review and Export Results
 
 After the calculations have been completed, the results can be visualized directly in the plan view. The data can also be exported for further documentation, review, and integration into the acoustic design process.
 
-images/figure6.png
+![Figure 6. Visualization and export of calculated acoustic requirements.]image−6.pngimage-6.pngimage−6.png
 
 Figure 6. Visualization and export of calculated acoustic requirements.
 
-The key Markdown syntax for images is simply:
-
-images/figure1.png
-
-Replace the path with your actual image filename.
 
 ### What is in this folder
 
