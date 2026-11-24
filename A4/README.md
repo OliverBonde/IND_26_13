@@ -20,17 +20,19 @@ The tool relies heavily on user input and is therefore intended to support, rath
 
 Start the program and wait for the user interface to appear. Once the interface is loaded, select Open IFC File and choose the appropriate IFC model.
 
-![Figure 1. Main window with the IFC import functionality highlighted.]image−1.pngimage-1.pngimage−1.png
+![Figure 1: Run.](images/1.png)
+Figure 1. Run main.py to start program
 
-Figure 1. Main window with the IFC import functionality highlighted.
+![Figure 2: Load ifc.](images/2.png)
+Figure 2. [Open IFC file] and load IFC.
 
 #### Step 2: Select Levels to Include
 
 The program prompts the user to select which building levels should be included in the analysis. This step is necessary because IFC models may contain unused levels that are not relevant to the project. The tool displays the spaces associated with each identified level to assist the user in making the correct selection.
 
-![Figure 2. Dialog showing the identified levels and associated spaces.]image−2.pngimage-2.pngimage−2.png
+![Figure 3: Levels.](images/3.png)
 
-Figure 2. Dialog showing the identified levels and associated spaces.
+Figure 3. Select levels to include from dialog.
 
 #### Step 3: Assign a Room Category to Each Space
 
@@ -44,7 +46,7 @@ Figure 3. Space overview and room category assignment interface.
 
 Open the plan view within the program. A new window will display the selected building level, including walls, doors, windows, and spaces. The plan view works together with the space list, helping the user understand the location and context of each room within the building and thereby supporting the categorization process.
 
-![Figure 4. Plan view displaying spaces and building elements.](images\Kategorisering-af-rum.png)
+![Figure 4. Plan view displaying spaces and building elements.]image−4.pngimage-4.pngimage−4.png
 
 Figure 4. Plan view displaying spaces and building elements.
 
@@ -52,14 +54,15 @@ Figure 4. Plan view displaying spaces and building elements.
 
 Once all spaces have been categorized, the calculation process can begin. This automated procedure evaluates the applicable acoustic requirements defined in BR18 and determines the required airborne sound insulation performance between adjacent rooms and spaces.
 
-![Figure 5. Calculation of acoustic requirements based on the assigned room categories.](images\resultattabel.png)
+![Figure 5. Calculation of acoustic requirements based on the assigned room categories.]image−5.pngimage-5.pngimage−5.png
+
 Figure 5. Calculation of acoustic requirements based on the assigned room categories.
 
 #### Step 6: Review and Export Results
 
 After the calculations have been completed, the results can be visualized directly in the plan view. The data can also be exported for further documentation, review, and integration into the acoustic design process.
 
-![Figure 6. Visualization and export of calculated acoustic requirements.](images\resultater-på-plan.svg)
+![Figure 6. Visualization and export of calculated acoustic requirements.]image−6.pngimage-6.pngimage−6.png
 
 Figure 6. Visualization and export of calculated acoustic requirements.
 
