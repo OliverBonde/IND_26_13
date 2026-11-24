@@ -52,8 +52,7 @@ Figure 4. Plan view displaying spaces and building elements.
 
 Once all spaces have been categorized, the calculation process can begin. This automated procedure evaluates the applicable acoustic requirements defined in BR18 and determines the required airborne sound insulation performance between adjacent rooms and spaces.
 
-![Figure 5. Calculation of acoustic requirements based on the assigned room categories.]image−5.pngimage-5.pngimage−5.png
-
+![Figure 5. Calculation of acoustic requirements based on the assigned room categories.]images\1 Kategorisering af rum.png
 Figure 5. Calculation of acoustic requirements based on the assigned room categories.
 
 #### Step 6: Review and Export Results
