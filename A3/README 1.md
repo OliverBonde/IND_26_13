@@ -20,7 +20,7 @@ A general guide for turning a subject you are interested in into a BIM tool idea
 | **Focus area** | Indoor & Energy / Acoustic / Daylight |
 | **BIM use** | Defining a BIM use from the information available in an IFC model |
 | **Our example** | A tool that finds the sound insulation requirements between spaces |
-| **Formats** | This README, and **TODO** a second format (for example a short video) |
+| **Formats** | This README, and a short video: https://youtu.be/hbrs1J3zqME |
 
 ---
 

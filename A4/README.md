@@ -4,7 +4,7 @@
 **Focus area:** Building acoustics / architectural design  
 **Tool:** BR18 R'w Requirements checker <br>
 **Group:** 13 <br>
-**Case model:** `26-01-D-ARCH.ifc`, however the tools works on any IFC.
+**Case model:** `26-01-D-ARCH.ifc`, however the tool works on any IFC.
 
 ## 1. About the tool
 
@@ -17,7 +17,9 @@
 
 #### Where the problem / claim was indentified 
 
-The problem/claim isn't found in a particular IFC-file, since no measured/tested wall performance has been supplied/calculated. Instead, the sound insulation requirements for interior separating walls in a given IFC-file are established.
+We found the claim in our A2 use-case analysis ([A2](../A2/README.md), section A2b). It concerns building 2601 (`26-01-D-ARCH.ifc`) and the sound insulation requirements in BR18 §368 – §376.
+
+The claim cannot be checked directly, because the model contains no measured or tested wall performance. The tool therefore does the step before that check: it finds the sound insulation that BR18 requires for each interior separating wall.
 
 
 ### What the Tool Does and How It Is Used
@@ -65,7 +67,7 @@ The program prompts the user to select which building levels should be included 
 
 Figure 3. Select levels to include from dialog.
 
-### <ins>Step 3: Assign a foom function to each space
+### <ins>Step 3: Assign a Room function to each space
 
 
 Once the desired levels are selected, the table on the right side of the figure below appears. Here, all IFC-spaces are listed with their associated number, level, description and area. This information assists the user in determining the appropriate BR18 function for the space. However, it remains the responsibility of the user to assess the intended room function and select the correct function from the drop-down menu at the bottom of the window. The descriptions, provided by the architect, serve as guidance for the acoustician when assigning the appropriate BR18 room function.
@@ -75,22 +77,22 @@ To help the user identify and locate spaces within the building, the tool genera
 The floor plans are linked to the room classification table, allowing users to select and highlight spaces in either view. This makes it easier to understand the relationships between rooms and assign the appropriate BR18 functions.
 
 
-![Figure 3. Space overview and room category assignment interface.](images/4.png)
+![Figure 4. Space overview and room category assignment interface.](images/4.png)
 
-Figure 3. Space overview and room category assignment interface.
+Figure 4. Space overview and room category assignment interface.
 
 
 ### <ins>Step 4: Complete the Categorization of the Rooms
 
 Using the drop-down menu at the bottom of the right side of the figure below, the rooms may be categorized based on their function. 
 
-The example shown in the figure below is intended solely to demonstrate the tool's functionality. The IFC model (`26-01-D-ARCH.ifc`) contains offices and other room functions that are not covered in [BR18 §368 – §376 Guidelines for Educational Buildings](https://www.bygningsreglementet.dk/tekniske-bestemmelser/17/vejledninger/undervisningsbygninger/). Therefore, the example should not be interpreted as an assessment of `26-01-D-ARCH.ifc`'s actual compliance with these requirements.
+The example shown in the figure below is intended solely to demonstrate the tool's functionality. The IFC model (`26-01-D-ARCH.ifc`) also contains rooms that do not clearly fit any of the room types in [BR18 §368 – §376 Guidelines for Educational Buildings](https://www.bygningsreglementet.dk/tekniske-bestemmelser/17/vejledninger/undervisningsbygninger/), for example bike parking and a courtyard. The example should therefore not be interpreted as an assessment of `26-01-D-ARCH.ifc`'s actual compliance with these requirements.
 
 **Note:** Not all spaces need to be categorized. The tool analyzes only categorized spaces and their adjacent rooms, allowing the user to determine the required R'w for a single room pair, a selected group of rooms, or all relevant interior separating walls.
 
-![Figure 4. Plan view displaying spaces and building elements.](images/5.png)
+![Figure 5. Plan view displaying spaces and building elements.](images/5.png)
 
-Figure 4. Plan view displaying spaces and building elements.
+Figure 5. Plan view displaying spaces and building elements.
 
 For educational buildings, the following room categories/functions are used in the tool, based on [BR18 §368 – §376 Guidelines for Educational Buildings section 3.1 and 3.2](https://www.bygningsreglementet.dk/tekniske-bestemmelser/17/vejledninger/undervisningsbygninger/definitioner-af-rumtyper-for-undervisningsbygninger/#5036b98b-248e-48ea-8f22-d081436c63b7):
 
@@ -108,20 +110,20 @@ Once the rooms have been categorized, press "Calculate Required R'w" to evaluate
 
 The outcome of this is the table shown in the figure below. Here each room-pair is listed by the room number and its categorized function as well as the separation type, required R'w (i.e. the result of the calculations) and the applicable BR18 rule following [BR18 §368 – §376 Guidelines for Educational Buildings, Table 3.1](https://www.bygningsreglementet.dk/tekniske-bestemmelser/17/vejledninger/undervisningsbygninger/lydisolation-for-undervisningsbygninger/#127bd002-d895-4fe3-b7c5-41d10afcf285).
 
-In some instances the required R'w can't be determined directly for BR18 §368 – §376, meaning that a manual assessment is needed. This is can be due to the specific combination of the two rooms not being present in BR18 §368 – §376. It can also be due to a lacking user input from the acoustician regarding flexible partitions and/or whether there is "particularly disturbing noise (særligt generende støj)" in one of the two rooms. The latter of the two is for instance relevant in the case of Teaching rooms being adjacent to External Units/Institutions.
+In some instances the required R'w can't be determined directly for BR18 §368 – §376, meaning that a manual assessment is needed. This can be due to the specific combination of the two rooms not being present in BR18 §368 – §376. It can also be due to a lacking user input from the acoustician regarding flexible partitions and/or whether there is "particularly disturbing noise (særligt generende støj)" in one of the two rooms. The latter of the two is for instance relevant in the case of Teaching rooms being adjacent to External Units/Institutions.
 
 
-![Figure 5. Calculation of acoustic requirements based on the assigned room functions.](images/6.png)
+![Figure 6. Calculation of acoustic requirements based on the assigned room functions.](images/6.png)
 
-Figure 5. Calculation of acoustic requirements based on the assigned room functions. Horizontal separation type means that the rooms are adjacent on the same floor (i.e. they share at least one wall). Vertical would mean that one of the rooms is above/below the other (i.e. on a different floor).
+Figure 6. Calculation of acoustic requirements based on the assigned room functions. Horizontal separation type means that the rooms are adjacent on the same floor (i.e. they share at least one wall). Vertical would mean that one of the rooms is above/below the other (i.e. on a different floor).
 
 ### <ins>Step 6: Review and Export Results
 
 After the calculations have been completed, the results can be visualized directly in the plan view. The data can also be exported for further documentation, review, and integration into the acoustic design process.
 
-![Figure 6. Visualization and export of calculated acoustic requirements.](images/7.svg)
+![Figure 7. Visualization and export of calculated acoustic requirements.](images/7.svg)
 
-Figure 6. Visualization and export of calculated acoustic requirements.
+Figure 7. Visualization and export of calculated acoustic requirements.
 
 
 ### What is in this folder
