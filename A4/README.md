@@ -162,20 +162,29 @@ Figure 7. Visualization and export of calculated acoustic requirements.
 
 | IFC information | Used for |
 |---|---|
-| `IfcBuildingStorey` | Choosing which levels to include |
-| `IfcSpace` with geometry | The rooms and the floor plans. Name and description are shown to help the user. |
-| `IfcWall` and `IfcSlab` | Walls between rooms side by side, slabs between rooms above each other |
-| `IfcDoor` in a wall opening | Doors change the requirement |
-| `IfcRelSpaceBoundary` (optional) | Used first if the model has it. Otherwise the tool works from geometry. |
+| `IfcBuildingStorey` | Identifying and selecting building levels. |
+| `IfcSpace` with geometry | Identifying rooms, their locations and shapes for floor plans and adjacency detection. Room names and descriptions are displayed to help the user. |
+| `IfcSpace` area quantities | Displaying room areas in the room classification table. |
+| `IfcWall` and `IfcSlab` | Identifying and verifying walls and floor slabs separating adjacent rooms. |
+| `IfcDoor` and associated openings | Detecting direct door connections, which can affect the required R'w. |
+| `IfcRelSpaceBoundary` (optional) | Identifying room boundaries and shared building elements. If unavailable, the tool uses geometry to detect adjacency. |
 
-Room functions are not read from the model. The user assigns them.
+The most important requirement is that rooms are represented as `IfcSpace` objects with usable geometry. Walls, slabs and door information are needed for reliable acoustic analysis, while `IfcRelSpaceBoundary` is optional.
+
+Room functions are not automatically read from the IFC model. Instead, the user assigns the relevant BR18 room categories.
+
+
 
 ## Limitations
 
 - The tool gives the required R'w. It does not calculate how much a wall actually insulates, so it cannot show that a wall complies.
-- If a room gets the wrong category, its requirements will be wrong.
-- Without space boundaries in the model, neighbouring rooms are found from geometry. Check these results against the plans.
+- If a room gets assigned an incorrect function, the calculated R'w requirements will be wrong.
+- Without space boundaries (i.e. `IfcRelSpaceBoundary`) in the model, neighbouring rooms are found from geometry. These results should be checked against the building plans by the user (e.g. acoustician).
 - Only the BR18 rules for educational buildings are included.
+- Some room combinations are not explicitly covered by [BR18 §368 – §376 Guidelines for Educational Buildings, Table 3.1](https://www.bygningsreglementet.dk/tekniske-bestemmelser/17/vejledninger/undervisningsbygninger/lydisolation-for-undervisningsbygninger/#127bd002-d895-4fe3-b7c5-41d10afcf285) and therefore require manual assessment.
+- Some requirements depend on additional user input, such as whether a partition is flexible or whether particularly disturbing noise is present.
+- Missing or incorrectly modelled doors and openings in the IFC model may lead to incorrect or uncertain R'w requirements.
+- The tool only evaluates airborne sound insulation (R'w). Other acoustic requirements, such as impact sound insulation and reverberation time, are not considered (which they should in a real acoustic design process).
 
 ## References
 
