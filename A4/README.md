@@ -126,19 +126,19 @@ After the calculations have been completed, the results can be visualized direct
 Figure 7. Visualization and export of calculated acoustic requirements.
 
 
-### What is in this folder
+### What is in this A4 folder
 
 | File | What it does |
 |---|---|
-| `main.py` | Starts the program. Opens the IFC file, lets the user choose levels and room categories, shows the floor plans, and exports CSV, PDF and a new IFC with the room categories. |
-| `ifc_acoustics.py` | Finds which rooms are next to each other and whether there is a door between them. |
-| `ifc_relation_analysis.py` | Checks that a wall or slab actually separates the two rooms. |
-| `br18_Rw_rules.py` | The BR18 rules. Gives the required R'w for a room pair. |
-| `br18_rule_labels.py` | The text shown for each BR18 rule. |
-| `br18_results_ui.py` | The results window. |
+| `main.py` | Starts the program, loads IFC files, allows users to select building levels and classify rooms, displays floor plans, and provides CSV, PDF and SVG export options. |
+| `ifc_acoustics.py` | Finds neighbouring rooms, identifies what separates them, checks for door connections, and prepares the information needed to determine acoustic requirements. |
+| `ifc_relation_analysis.py` | Checks which walls and floor slabs border each room in the IFC model to determine whether two rooms share a separating building element. Then, the verified information is passed back to `ifc_acoustics.py` for further analysis. |
+| `br18_Rw_rules.py` | Contains the BR18 rules used to determine the required airborne sound insulation (R'w) between room pairs. |
+| `br18_rule_labels.py` | Links calculation results to the corresponding descriptions in [BR18 §368 – §376 Guidelines for Educational Buildings, Table 3.1](https://www.bygningsreglementet.dk/tekniske-bestemmelser/17/vejledninger/undervisningsbygninger/lydisolation-for-undervisningsbygninger/#127bd002-d895-4fe3-b7c5-41d10afcf285) |
+| `br18_results_ui.py` | Displays calculated R'w requirements, applicable rules, and cases requiring manual assessment in a table-format in a new window. |
 | `rw_heatmap.py` | Colours the walls on the floor plan by their R'w requirement. |
-| `floor_plan_export.py` | Exports the floor plans as SVG. |
-| `ui_english.py` | English text for the interface. |
+| `floor_plan_export.py` | Exports floor plans with room classifications, R'w visualizations, and legends to PDF and SVG. |
+| `ui_english.py` | Manages Danish and English translations of the application's interface and messages. |
 | `images/` | Figures for this README. |
 
 [`A4A`](../A4A) contains the starter-framework version, which lists every room in the model, as agreed with Tim in class. 
