@@ -258,7 +258,6 @@ class ResultsWindow:
         ttk.Label(top, text=self.tr("BR18 – Required R'w Between Rooms"), font=("Segoe UI", 15, "bold")).pack(side="left")
         ttk.Button(top, text=self.tr("Export Results to CSV"), command=self.save_csv).pack(side="right")
         ttk.Button(top, text=self.tr("Show R'w on Floor Plan"), command=self.show_rw_on_plan).pack(side="right", padx=(0, 8))
-        ttk.Button(top, text=self.tr("Show IFC Pre-check"), command=self.show_preflight).pack(side="right", padx=(0, 8))
         self.more_button = ttk.Button(top, text=self.tr("Hide Additional Information") if self.expanded
                                       else self.tr("More Information"), command=self.toggle_details)
         self.more_button.pack(side="right", padx=(0, 8))
@@ -571,45 +570,6 @@ class ResultsWindow:
         editor.bind("<Return>", finish)
         editor.bind("<Escape>", cancel)
 
-    def show_preflight(self):
-        d = self.diagnostic
-        boundaries = d.get('space_boundaries', {})
-        neighbors = d.get('naboskab_verificeret', {})
-        info = (
-            "IFC Pre-check – Analysis Engine v6\n\n"
-            f"Rooms with usable geometry: {d.get('geometriske_rum', 0)}\n"
-            f"Rooms without usable geometry: {d.get('rum_uden_geometri', 0)}\n"
-            "Space boundaries (relationship count): "
-            f"2nd-level {boundaries.get('2nd', 0)}, "
-            f"1st-level {boundaries.get('1st', 0)}, "
-            f"other {boundaries.get('generic', 0)}\n"
-            f"Walls/slabs with usable geometry: {d.get('fysiske_bygningsdele', 0)}\n"
-            f"Building elements without usable geometry: {d.get('bygningsdele_uden_geometri', 0)}\n\n"
-            "Automatically confirmed adjacencies:\n"
-            f"  Direct corresponding IFC boundaries: {neighbors.get('corresponding', 0)}\n"
-            f"  Shared IFC wall/slab and geometry: {neighbors.get('shared_ifc', 0)}\n"
-            f"  Physical walls/slabs through geometry: {neighbors.get('separator_geometry', 0)}\n"
-            f"Unconfirmed candidates: {d.get('naboskab_ubekraeftet', 0)}\n\n"
-            f"Detected doors with geometry: {d.get('antal_døre', 0)}\n"
-            f"Automatically detected direct door connections: {d.get('automatisk_fundne_dørforbindelser', 0)}\n"
-            f"Automatically confirmed absence of a modelled door: {d.get('automatisk_ingen_dor', 0)}\n\n"
-            "Note: 'No modelled door' assumes a complete IFC export. "
-            "The program cannot prove that every real door was exported. "
-            "Omitted elements may also cause some adjacencies to be missed."
-        )
-        if self.language() == "Dansk":
-            info = ("IFC-forcheck – Analysemotor v6\n\n"
-                    f"Rum med brugbar geometri: {d.get('geometriske_rum',0)}\n"
-                    f"Rum uden brugbar geometri: {d.get('rum_uden_geometri',0)}\n"
-                    f"Rumgrænser: 2nd-level {boundaries.get('2nd',0)}, 1st-level {boundaries.get('1st',0)}, andre {boundaries.get('generic',0)}\n"
-                    f"Vægge/dæk med brugbar geometri: {d.get('fysiske_bygningsdele',0)}\n"
-                    f"Automatisk bekræftede naboskaber: {sum(neighbors.values())}\n"
-                    f"Ubekræftede kandidater: {d.get('naboskab_ubekraeftet',0)}\n"
-                    f"Døre med geometri: {d.get('antal_døre',0)}\n"
-                    f"Automatisk fundne dørforbindelser: {d.get('automatisk_fundne_dørforbindelser',0)}\n"
-                    f"Automatisk ingen modelleret dør: {d.get('automatisk_ingen_dor',0)}\n\n"
-                    "Bemærk: IFC-modellen kan mangle eksporterede døre eller bygningsdele.")
-        messagebox.showinfo(self.tr('IFC Pre-check'), info, parent=self.win)
 
     def save_csv(self):
         name = self.app.filepath.stem if self.app.filepath else "IFC"

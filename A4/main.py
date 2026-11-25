@@ -1,6 +1,6 @@
 """IFC Room Classifier — BR18 section 3.1 (educational buildings).
 
-Run: python ifc_room_classifier.py
+Run: python main.py
 Install: python -m pip install ifcopenshell
 """
 from __future__ import annotations
@@ -20,7 +20,6 @@ from floor_plan_export import (visible_sheet_legend, legend_positions,
 
 try:
     import ifcopenshell
-    import ifcopenshell.api.pset
     import ifcopenshell.util.element
 except ImportError:
     ifcopenshell = None
@@ -36,10 +35,6 @@ CATEGORIES = (
 )
 PSET_NAME = "Pset_BR18_RoomClassification"
 PROPERTY_NAME = "BR18_RoomType"
-BR18_SOURCE = (
-    "https://www.bygningsreglementet.dk/tekniske-bestemmelser/17/"
-    "vejledninger/undervisningsbygninger/definitioner-af-rumtyper-for-undervisningsbygninger/"
-)
 
 
 class ClassifierApp(tk.Tk):
@@ -107,7 +102,6 @@ class ClassifierApp(tk.Tk):
         ttk.Button(bar, text=self.tr("Select Levels"), command=self.choose_levels_again).pack(side="left", padx=(10, 0))
         ttk.Button(bar, text=self.tr("Show Floor Plan"), command=self.show_plan).pack(side="left", padx=(10, 0))
         ttk.Button(bar, text=self.tr("Export CSV"), command=self.save_csv).pack(side="left", padx=(10, 0))
-        ttk.Button(bar, text=self.tr("Save New IFC"), command=self.save_ifc).pack(side="left", padx=(10, 0))
         ttk.Button(bar, text=self.tr("Calculate Required R'w"), command=self.calculate_rw).pack(side="left", padx=(12, 0))
         lang_frame = ttk.Frame(bar)
         lang_frame.pack(side="right", padx=(5, 0))
@@ -720,34 +714,6 @@ class ClassifierApp(tk.Tk):
                     "Some potential adjacencies may therefore be missing from the results. "
                     "Check these rooms in IFC/Revit.", parent=self)
         poll()
-
-    def save_ifc(self):
-        if not self.check_loaded():
-            return
-        filename = filedialog.asksaveasfilename(title=self.tr("Save New IFC with BR18 Room Classifications"), defaultextension=".ifc", initialfile=self.filepath.stem + "_BR18.ifc", filetypes=[("IFC", "*.ifc")])
-        if not filename:
-            return
-        if Path(filename).resolve() == self.filepath.resolve():
-            messagebox.showerror(self.tr("Original IFC File"), self.tr("Choose a different filename to avoid overwriting the original IFC."))
-            return
-        try:
-            # Reopen original to avoid accumulated mutations if saving more than once.
-            output = ifcopenshell.open(str(self.filepath))
-            for space in output.by_type("IfcSpace"):
-                if space.GlobalId not in self.spaces:
-                    continue  # Leave unselected levels completely unchanged.
-                category = self.categories.get(space.GlobalId, CATEGORIES[0])
-                psets = ifcopenshell.util.element.get_psets(space)
-                existing = psets.get(PSET_NAME)
-                if existing and existing.get("id"):
-                    pset = output.by_id(existing["id"])
-                else:
-                    pset = ifcopenshell.api.pset.add_pset(output, product=space, name=PSET_NAME)
-                ifcopenshell.api.pset.edit_pset(output, pset=pset, properties={PROPERTY_NAME: category})
-            output.write(filename)
-            messagebox.showinfo(self.tr("Saved Successfully"), (f"Ny IFC med rumkategorier gemt:\n{filename}\n\nDen oprindelige fil er ikke ændret." if self.language.get()=="Dansk" else f"New IFC with room classifications saved:\n{filename}\n\nThe original file has not been modified."))
-        except Exception as exc:
-            messagebox.showerror(self.tr("IFC Export Error"), str(exc))
 
 
 
