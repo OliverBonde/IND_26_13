@@ -175,7 +175,7 @@ Room functions are not automatically read from the IFC model. Instead, the user 
 
 
 
-## Limitations
+## Limitations of the tool
 
 - The tool gives the required R'w. It does not calculate how much a wall actually insulates, so it cannot show that a wall complies.
 - If a room gets assigned an incorrect function, the calculated R'w requirements will be wrong.
