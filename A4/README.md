@@ -22,9 +22,9 @@
 | `floor_plan_export.py` | Exports floor plans with room classifications, R'w visualizations, and legends to PDF and SVG. |
 | `ui_english.py` | Manages Danish and English translations of the application's interface and messages. |
 
-[`A4A`](../A4A) contains the starter-framework version, which lists every room in the model, as agreed with Tim in class. 
+[`A4A`](../A4A) contains a very simplified version of tool created to comply with Tim's framework ([node-comply-template](https://github.com/timmcginley/node-comply-template)). This version of the tool does... ?? as agreed with Tim during class on 23/11/2026.
 
-## Not sure about this last sentence (we'll ask Tim on Monday)
+## FIGURE OUT what the dumbed-down tool should do (we'll ask Tim on Monday)
 
 
 ## 1. About the tool
@@ -193,7 +193,6 @@ The development of the tool was AI-assisted, particularly in creating the user i
 
 - BR18, guidance for educational buildings, 3.1 Room type definitions: https://www.bygningsreglementet.dk/tekniske-bestemmelser/17/vejledninger/undervisningsbygninger/definitioner-af-rumtyper-for-undervisningsbygninger/
 - BR18, guidance for educational buildings, 3.2 Sound insulation, Table 3.1: https://www.bygningsreglementet.dk/tekniske-bestemmelser/17/vejledninger/undervisningsbygninger/lydisolation-for-undervisningsbygninger/
-- 41934 A4: Tool: https://timmcginley.github.io/41934/Assignments/A4.html
 
 ## Licence
 
