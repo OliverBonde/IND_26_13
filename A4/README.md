@@ -1,7 +1,7 @@
 # A4: Tool – Acoustic requirement classification (BR18)
 
 **Course:** 41934 Advanced Building Information Modeling (BIM)  
-**Focus area:** Building acoustics / architectural design  
+**Focus area:** Indoor & Energy -> Building acoustics. <br>
 **Tool:** BR18 R'w Requirements checker <br>
 **Group:** 13 <br>
 **Case model:** `26-01-D-ARCH.ifc`, however the tool works on any IFC.
@@ -10,6 +10,8 @@
 
 | File | What it does |
 |---|---|
+| `README.md` | Describes the tool, the problem / claim it solves as well as its relation to Advanced Building Design. |
+| `images/` | Figures for this README. |
 | `main.py` | Starts the program, loads IFC files, allows users to select building levels and classify rooms, displays floor plans, and provides CSV, PDF and SVG export options. |
 | `ifc_acoustics.py` | Finds neighbouring rooms, identifies what separates them, checks for door connections, and prepares the information needed to determine acoustic requirements. |
 | `ifc_relation_analysis.py` | Checks which walls and floor slabs border each room in the IFC model to determine whether two rooms share a separating building element. Then, the verified information is passed back to `ifc_acoustics.py` for further analysis. |
@@ -19,8 +21,6 @@
 | `rw_heatmap.py` | Colours the walls on the floor plan by their R'w requirement. |
 | `floor_plan_export.py` | Exports floor plans with room classifications, R'w visualizations, and legends to PDF and SVG. |
 | `ui_english.py` | Manages Danish and English translations of the application's interface and messages. |
-| `images/` | Figures for this README. |
-| `readme.md` | Describes the tool, the problem / claim it solves as well as its relation to Advanced Building Design. |
 
 [`A4A`](../A4A) contains the starter-framework version, which lists every room in the model, as agreed with Tim in class. 
 
