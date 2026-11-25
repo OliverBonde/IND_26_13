@@ -186,6 +186,9 @@ Room functions are not automatically read from the IFC model. Instead, the user 
 - Missing or incorrectly modelled doors and openings in the IFC model may lead to incorrect or uncertain R'w requirements.
 - The tool only evaluates airborne sound insulation (R'w). Other acoustic requirements, such as impact sound insulation and reverberation time, are not considered (which they should in a real acoustic design process).
 
+## Acknowledging the use of AI
+The development of the tool was AI-assisted, particularly in creating the user interface and thus improving the user experience. We believed that creating an intuitive and easy-to-use tool would provide greater value than requiring users to interact with the program through the terminal. AI was therefore used to support the development of a more accessible, functional, and user-friendly tool.
+
 ## References
 
 - BR18, guidance for educational buildings, 3.1 Room type definitions: https://www.bygningsreglementet.dk/tekniske-bestemmelser/17/vejledninger/undervisningsbygninger/definitioner-af-rumtyper-for-undervisningsbygninger/
