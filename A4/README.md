@@ -22,9 +22,8 @@
 | `floor_plan_export.py` | Exports floor plans with room classifications, R'w visualizations, and legends to PDF and SVG. |
 | `ui_english.py` | Manages Danish and English translations of the application's interface and messages. |
 
-[`A4A`](../A4A) contains a very simplified version of tool created to comply with Tim's framework ([node-comply-template](https://github.com/timmcginley/node-comply-template)). This version of the tool does... ?? as agreed with Tim during class on 23/11/2026.
+[`A4A`](../A4A) contains a very simplified version of the tool, made to fit Tim's framework ([node-comply-template](https://github.com/timmcginley/node-comply-template)). It lists every `IfcSpace` in the model (GlobalId, room number, name and long name) and saves the list as `result.json`. The full tool is in this folder (`A4`).
 
-## FIGURE OUT what the dumbed-down tool should do (we'll ask Tim on Monday)
 
 
 ## 1. About the tool
@@ -46,6 +45,14 @@ The claim cannot be checked directly, because the model contains no measured or 
 ### What the Tool Does and How It Is Used
 
 The tool relies heavily on user input and is therefore intended to support, rather than replace, the acoustician. It provides an overview of the IFC building model, allowing the user to assign the appropriate function (e.g. teaching room) to each room (i.e. IfcSpace). Based on this information, the tool automatically analyzes the building model and determines the relevant acoustic requirements for airborne sound insulation (R'w) in accordance with [BR18 §368 – §376 Guidelines for Educational Buildings](https://www.bygningsreglementet.dk/tekniske-bestemmelser/17/vejledninger/undervisningsbygninger/).
+
+### Process (BPMN)
+
+The as-is process (the whole acoustic use case) is in our A2: [`A2/Images/diagram.svg`](../A2/Images/diagram.svg).
+
+The to-be process with the tool is below. Blue steps are done by the user, white steps are done automatically by the tool, and the yellow box is the identification of which rooms are separated by what. Orange boxes are ideas that are not implemented. The editable file is [`A4_to-be_BPMN.bpmn`](images/A4_to-be_BPMN.bpmn).
+
+![To-be BPMN of the tool](images/A4_to-be_BPMN.svg)
 
 ## How to run the tool
 

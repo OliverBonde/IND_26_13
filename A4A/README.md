@@ -60,7 +60,7 @@ The result is saved in `window_count/results/run-<time>/result.json`. If the mod
 | `runall.py` | Opens the model, runs `analyse(model)` and saves the result |
 | `settings.py` | The path to the IFC model on your own computer |
 | `requirements.txt` | The Python packages to install |
-| `tests/` | Tests that came with the starter |
+| `tests/` | Tests that came with Tim's starter. They were written for the window-count example, so they do not match the room lister in `window_count/src/main.py`. |
 | `CHANGELOG.md` | List of changes |
 
 ## Credit and licence

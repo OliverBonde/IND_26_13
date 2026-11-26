@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" id="Definitions_A4" targetNamespace="http://bpmn.io/schema/bpmn">
+  <bpmn:collaboration id="Collab_A4">
+    <bpmn:participant id="Pool_A4" name="A4 tool, group 13: BR18 acoustic requirement classification (to-be)" processRef="Proc_A4" />
+  </bpmn:collaboration>
+  <bpmn:process id="Proc_A4" isExecutable="false">
+    <bpmn:laneSet id="LaneSet_A4">
+      <bpmn:lane id="Lane_User" name="User">
+        <bpmn:flowNodeRef>Start</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>U1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>U2</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>U3</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>U4</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>U6</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>U5</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>End</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Tool" name="Tool (automatic)">
+        <bpmn:flowNodeRef>T1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>G1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T5</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>G2</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T6</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T7</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>SP</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>D_ifc</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>D_br18</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>D_out</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Ideas" name="Ideas for improvement (not implemented)">
+        <bpmn:flowNodeRef>F1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>F3</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>F2</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="Start" name="Need BR18 wall requirements"><bpmn:outgoing>f1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="U1" name="Open IFC file"><bpmn:incoming>f1</bpmn:incoming><bpmn:outgoing>f2</bpmn:outgoing>
+      <bpmn:dataInputAssociation id="da1"><bpmn:sourceRef>D_ifc</bpmn:sourceRef></bpmn:dataInputAssociation>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="T1" name="Read rooms, levels, areas and room geometry"><bpmn:incoming>f2</bpmn:incoming><bpmn:outgoing>f3</bpmn:outgoing>
+      <bpmn:dataInputAssociation id="da2"><bpmn:sourceRef>D_ifc</bpmn:sourceRef></bpmn:dataInputAssociation>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="U2" name="Choose building levels"><bpmn:incoming>f3</bpmn:incoming><bpmn:outgoing>f4</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="U3" name="Assign BR18 room category (IFC name is only a hint)"><bpmn:incoming>f4</bpmn:incoming><bpmn:incoming>f7</bpmn:incoming><bpmn:outgoing>f5</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="U4" name="Start the R'w calculation"><bpmn:incoming>f5</bpmn:incoming><bpmn:outgoing>f6</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="G1" name="Any rooms categorized?"><bpmn:incoming>f6</bpmn:incoming><bpmn:outgoing>f7</bpmn:outgoing><bpmn:outgoing>f8</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="U6" name="Review pair: neighbour, door, partition, noise"><bpmn:incoming>f12</bpmn:incoming><bpmn:outgoing>f13</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="T5" name="Look up required R'w in BR18 Table 3.1"><bpmn:incoming>f9</bpmn:incoming><bpmn:incoming>f13</bpmn:incoming><bpmn:outgoing>f10</bpmn:outgoing>
+      <bpmn:dataInputAssociation id="da3"><bpmn:sourceRef>D_br18</bpmn:sourceRef></bpmn:dataInputAssociation>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="G2" name="Status?"><bpmn:incoming>f10</bpmn:incoming><bpmn:outgoing>f11</bpmn:outgoing><bpmn:outgoing>f12</bpmn:outgoing><bpmn:outgoing>f14</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:serviceTask id="T6" name="Show results and colour walls on floor plan"><bpmn:incoming>f11</bpmn:incoming><bpmn:incoming>f15</bpmn:incoming><bpmn:outgoing>f16</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="T7" name="Flag pair for manual acoustic assessment"><bpmn:incoming>f14</bpmn:incoming><bpmn:outgoing>f15</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="U5" name="Export results CSV and floor plans PDF / SVG"><bpmn:incoming>f16</bpmn:incoming><bpmn:outgoing>f17</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="da4"><bpmn:targetRef>D_out</bpmn:targetRef></bpmn:dataOutputAssociation>
+    </bpmn:userTask>
+    <bpmn:endEvent id="End" name="Requirement list and annotated floor plans"><bpmn:incoming>f17</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:task id="F1" name="IDEA: suggest room category from IFC name">
+    </bpmn:task>
+    <bpmn:task id="F3" name="IDEA: add impact sound and reverberation time">
+    </bpmn:task>
+    <bpmn:task id="F2" name="IDEA: write R'w back into the IFC model">
+    </bpmn:task>
+    <bpmn:subProcess id="SP" name="Identify which rooms are separated by what"><bpmn:incoming>f8</bpmn:incoming><bpmn:outgoing>f9</bpmn:outgoing>
+      <bpmn:serviceTask id="T2" name="Find neighbouring rooms (boundaries or geometry)"><bpmn:outgoing>fi1</bpmn:outgoing></bpmn:serviceTask>
+      <bpmn:serviceTask id="T3" name="Check that a wall or slab separates them"><bpmn:incoming>fi1</bpmn:incoming><bpmn:outgoing>fi2</bpmn:outgoing></bpmn:serviceTask>
+      <bpmn:serviceTask id="T4" name="Detect doors in the shared wall"><bpmn:incoming>fi2</bpmn:incoming></bpmn:serviceTask>
+      <bpmn:sequenceFlow id="fi1" sourceRef="T2" targetRef="T3" />
+      <bpmn:sequenceFlow id="fi2" sourceRef="T3" targetRef="T4" />
+    </bpmn:subProcess>
+    <bpmn:sequenceFlow id="f1" sourceRef="Start" targetRef="U1" />
+    <bpmn:sequenceFlow id="f2" sourceRef="U1" targetRef="T1" />
+    <bpmn:sequenceFlow id="f3" sourceRef="T1" targetRef="U2" />
+    <bpmn:sequenceFlow id="f4" sourceRef="U2" targetRef="U3" />
+    <bpmn:sequenceFlow id="f5" sourceRef="U3" targetRef="U4" />
+    <bpmn:sequenceFlow id="f6" sourceRef="U4" targetRef="G1" />
+    <bpmn:sequenceFlow id="f7" name="No" sourceRef="G1" targetRef="U3" />
+    <bpmn:sequenceFlow id="f8" name="Yes" sourceRef="G1" targetRef="SP" />
+    <bpmn:sequenceFlow id="f9" sourceRef="SP" targetRef="T5" />
+    <bpmn:sequenceFlow id="f10" sourceRef="T5" targetRef="G2" />
+    <bpmn:sequenceFlow id="f11" name="Determined" sourceRef="G2" targetRef="T6" />
+    <bpmn:sequenceFlow id="f12" name="Needs input" sourceRef="G2" targetRef="U6" />
+    <bpmn:sequenceFlow id="f13" name="Recalculate" sourceRef="U6" targetRef="T5" />
+    <bpmn:sequenceFlow id="f14" name="Not covered" sourceRef="G2" targetRef="T7" />
+    <bpmn:sequenceFlow id="f15" sourceRef="T7" targetRef="T6" />
+    <bpmn:sequenceFlow id="f16" sourceRef="T6" targetRef="U5" />
+    <bpmn:sequenceFlow id="f17" sourceRef="U5" targetRef="End" />
+    <bpmn:dataObject id="D_ifc_obj" />
+    <bpmn:dataObjectReference id="D_ifc" name="IFC model" dataObjectRef="D_ifc_obj" />
+    <bpmn:dataObject id="D_br18_obj" />
+    <bpmn:dataObjectReference id="D_br18" name="BR18 Table 3.1, §368–376" dataObjectRef="D_br18_obj" />
+    <bpmn:dataObject id="D_out_obj" />
+    <bpmn:dataObjectReference id="D_out" name="CSV, PDF and SVG files" dataObjectRef="D_out_obj" />
+    <bpmn:association id="as1" associationDirection="None" sourceRef="F1" targetRef="U3" />
+    <bpmn:association id="as2" associationDirection="None" sourceRef="F3" targetRef="T5" />
+    <bpmn:association id="as3" associationDirection="None" sourceRef="F2" targetRef="T6" />
+    <bpmn:textAnnotation id="N1"><bpmn:text>Not covered by this tool (steps in our A2 diagram): calculating how much insulation a wall actually gives, assigning materials to walls, redesigning walls.</bpmn:text></bpmn:textAnnotation>
+    <bpmn:textAnnotation id="N2"><bpmn:text>Blue = done by the user. White = done automatically by the tool. Yellow = identification of what separates which rooms (the hard part). Orange = idea, not implemented.</bpmn:text></bpmn:textAnnotation>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="Diagram_A4">
+    <bpmndi:BPMNPlane id="Plane_A4" bpmnElement="Collab_A4">
+      <bpmndi:BPMNShape id="Pool_A4_di" bpmnElement="Pool_A4" isHorizontal="true"><dc:Bounds x="0" y="0" width="2140" height="650" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_User_di" bpmnElement="Lane_User" isHorizontal="true"><dc:Bounds x="30" y="0" width="2110" height="170" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Tool_di" bpmnElement="Lane_Tool" isHorizontal="true"><dc:Bounds x="30" y="170" width="2110" height="310" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Ideas_di" bpmnElement="Lane_Ideas" isHorizontal="true"><dc:Bounds x="30" y="480" width="2110" height="170" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Start_di" bpmnElement="Start"><dc:Bounds x="82" y="67" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="55" y="107" width="90" height="40" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="U1_di" bpmnElement="U1" bioc:stroke="#1565c0" bioc:fill="#d6eaff"><dc:Bounds x="160" y="40" width="120" height="90" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T1_di" bpmnElement="T1" bioc:stroke="#424242" bioc:fill="#ffffff"><dc:Bounds x="310" y="245" width="120" height="90" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="U2_di" bpmnElement="U2" bioc:stroke="#1565c0" bioc:fill="#d6eaff"><dc:Bounds x="460" y="40" width="120" height="90" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="U3_di" bpmnElement="U3" bioc:stroke="#1565c0" bioc:fill="#d6eaff"><dc:Bounds x="610" y="40" width="120" height="90" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="U4_di" bpmnElement="U4" bioc:stroke="#1565c0" bioc:fill="#d6eaff"><dc:Bounds x="760" y="40" width="120" height="90" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="G1_di" bpmnElement="G1" isMarkerVisible="true"><dc:Bounds x="795" y="265" width="50" height="50" /><bpmndi:BPMNLabel><dc:Bounds x="775" y="319" width="90" height="28" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="U6_di" bpmnElement="U6" bioc:stroke="#1565c0" bioc:fill="#d6eaff"><dc:Bounds x="1580" y="40" width="120" height="90" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T5_di" bpmnElement="T5" bioc:stroke="#424242" bioc:fill="#ffffff"><dc:Bounds x="1440" y="245" width="120" height="90" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="G2_di" bpmnElement="G2" isMarkerVisible="true"><dc:Bounds x="1615" y="265" width="50" height="50" /><bpmndi:BPMNLabel><dc:Bounds x="1572" y="318" width="56" height="16" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T6_di" bpmnElement="T6" bioc:stroke="#424242" bioc:fill="#ffffff"><dc:Bounds x="1730" y="245" width="120" height="90" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T7_di" bpmnElement="T7" bioc:stroke="#424242" bioc:fill="#ffffff"><dc:Bounds x="1580" y="365" width="120" height="90" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="U5_di" bpmnElement="U5" bioc:stroke="#1565c0" bioc:fill="#d6eaff"><dc:Bounds x="1880" y="40" width="120" height="90" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_di" bpmnElement="End"><dc:Bounds x="2052" y="67" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="2015" y="107" width="110" height="54" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="F1_di" bpmnElement="F1" bioc:stroke="#d9731a" bioc:fill="#ffe3cc"><dc:Bounds x="650" y="520" width="120" height="90" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="F3_di" bpmnElement="F3" bioc:stroke="#d9731a" bioc:fill="#ffe3cc"><dc:Bounds x="1470" y="520" width="120" height="90" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="F2_di" bpmnElement="F2" bioc:stroke="#d9731a" bioc:fill="#ffe3cc"><dc:Bounds x="1770" y="520" width="120" height="90" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="SP_di" bpmnElement="SP" isExpanded="true" bioc:stroke="#a67c00" bioc:fill="#fff4b8"><dc:Bounds x="920" y="205" width="485" height="170" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T2_di" bpmnElement="T2" bioc:stroke="#a67c00" bioc:fill="#fffbe3"><dc:Bounds x="945" y="245" width="120" height="90" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T3_di" bpmnElement="T3" bioc:stroke="#a67c00" bioc:fill="#fffbe3"><dc:Bounds x="1095" y="245" width="120" height="90" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T4_di" bpmnElement="T4" bioc:stroke="#a67c00" bioc:fill="#fffbe3"><dc:Bounds x="1245" y="245" width="120" height="90" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="D_ifc_di" bpmnElement="D_ifc"><dc:Bounds x="202" y="265" width="36" height="50" /><bpmndi:BPMNLabel><dc:Bounds x="170" y="320" width="100" height="28" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="D_br18_di" bpmnElement="D_br18"><dc:Bounds x="1442" y="385" width="36" height="50" /><bpmndi:BPMNLabel><dc:Bounds x="1400" y="438" width="120" height="40" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="D_out_di" bpmnElement="D_out"><dc:Bounds x="1922" y="265" width="36" height="50" /><bpmndi:BPMNLabel><dc:Bounds x="1890" y="320" width="100" height="28" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="N1_di" bpmnElement="N1"><dc:Bounds x="90" y="500" width="500" height="60" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="N2_di" bpmnElement="N2"><dc:Bounds x="830" y="500" width="600" height="60" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="f1_di" bpmnElement="f1"><di:waypoint x="118" y="85" /><di:waypoint x="160" y="85" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f2_di" bpmnElement="f2"><di:waypoint x="280" y="85" /><di:waypoint x="370" y="85" /><di:waypoint x="370" y="245" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f3_di" bpmnElement="f3"><di:waypoint x="430" y="290" /><di:waypoint x="520" y="290" /><di:waypoint x="520" y="130" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f4_di" bpmnElement="f4"><di:waypoint x="580" y="85" /><di:waypoint x="610" y="85" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f5_di" bpmnElement="f5"><di:waypoint x="730" y="85" /><di:waypoint x="760" y="85" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f6_di" bpmnElement="f6"><di:waypoint x="820" y="130" /><di:waypoint x="820" y="265" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f7_di" bpmnElement="f7"><di:waypoint x="795" y="290" /><di:waypoint x="630" y="290" /><di:waypoint x="630" y="130" /><bpmndi:BPMNLabel><dc:Bounds x="765" y="272" width="24" height="14" /></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f8_di" bpmnElement="f8"><di:waypoint x="845" y="290" /><di:waypoint x="920" y="290" /><bpmndi:BPMNLabel><dc:Bounds x="852" y="270" width="30" height="14" /></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f9_di" bpmnElement="f9"><di:waypoint x="1405" y="290" /><di:waypoint x="1440" y="290" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f10_di" bpmnElement="f10"><di:waypoint x="1560" y="290" /><di:waypoint x="1615" y="290" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f11_di" bpmnElement="f11"><di:waypoint x="1665" y="290" /><di:waypoint x="1730" y="290" /><bpmndi:BPMNLabel><dc:Bounds x="1665" y="268" width="66" height="14" /></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f12_di" bpmnElement="f12"><di:waypoint x="1640" y="265" /><di:waypoint x="1640" y="130" /><bpmndi:BPMNLabel><dc:Bounds x="1648" y="190" width="70" height="14" /></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f13_di" bpmnElement="f13"><di:waypoint x="1580" y="85" /><di:waypoint x="1500" y="85" /><di:waypoint x="1500" y="245" /><bpmndi:BPMNLabel><dc:Bounds x="1510" y="66" width="66" height="14" /></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f14_di" bpmnElement="f14"><di:waypoint x="1640" y="315" /><di:waypoint x="1640" y="365" /><bpmndi:BPMNLabel><dc:Bounds x="1648" y="336" width="66" height="14" /></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f15_di" bpmnElement="f15"><di:waypoint x="1700" y="410" /><di:waypoint x="1770" y="410" /><di:waypoint x="1770" y="335" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f16_di" bpmnElement="f16"><di:waypoint x="1790" y="245" /><di:waypoint x="1790" y="85" /><di:waypoint x="1880" y="85" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f17_di" bpmnElement="f17"><di:waypoint x="2000" y="85" /><di:waypoint x="2052" y="85" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="fi1_di" bpmnElement="fi1"><di:waypoint x="1065" y="290" /><di:waypoint x="1095" y="290" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="fi2_di" bpmnElement="fi2"><di:waypoint x="1215" y="290" /><di:waypoint x="1245" y="290" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="da1_di" bpmnElement="da1"><di:waypoint x="220" y="265" /><di:waypoint x="220" y="130" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="da2_di" bpmnElement="da2"><di:waypoint x="238" y="290" /><di:waypoint x="310" y="290" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="da3_di" bpmnElement="da3"><di:waypoint x="1460" y="385" /><di:waypoint x="1460" y="335" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="da4_di" bpmnElement="da4"><di:waypoint x="1940" y="130" /><di:waypoint x="1940" y="265" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="as1_di" bpmnElement="as1"><di:waypoint x="710" y="520" /><di:waypoint x="710" y="130" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="as2_di" bpmnElement="as2"><di:waypoint x="1530" y="520" /><di:waypoint x="1530" y="335" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="as3_di" bpmnElement="as3"><di:waypoint x="1830" y="520" /><di:waypoint x="1830" y="335" /></bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
