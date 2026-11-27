@@ -22,8 +22,7 @@
 | `floor_plan_export.py` | Exports floor plans with room classifications, R'w visualizations, and legends to PDF and SVG. |
 | `ui_english.py` | Manages Danish and English translations of the application's interface and messages. |
 
-[`A4A`](../A4A) contains a very simplified version of the tool, made to fit Tim's framework ([node-comply-template](https://github.com/timmcginley/node-comply-template)). It lists every `IfcSpace` in the model (GlobalId, room number, name and long name) and saves the list as `result.json`. The full tool is in this folder (`A4`).
-
+[`A4A`](../A4A) contains a very simplified version of the tool, made to fit Tim's framework ([node-comply-template](https://github.com/timmcginley/node-comply-template)). It extracts information from every `IfcSpace` in the IFC model, including room number (`Number` property, or `IfcSpace.Description` as backup), IFC room name (`IfcSpace.Name`), level (`IfcBuildingStorey`), description (`IfcSpace.LongName`), and space area (`IfcQuantityArea`, using `NetFloorArea` when available, in m²), and saves the results as `result.json` located [here](https://github.com/OliverBonde/IND_26_13/tree/main/A4A/window_count/results). The full tool is in this folder (`A4`).
 
 
 ## 1. About the tool
