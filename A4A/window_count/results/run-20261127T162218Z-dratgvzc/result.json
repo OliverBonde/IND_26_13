@@ -1,0 +1,495 @@
+{
+  "space_count": 70,
+  "spaces": [
+    {
+      "room_no": "",
+      "ifc_room_name": "101",
+      "level": "basement",
+      "description": "Materials library",
+      "space_area_m2": 115.34
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "102",
+      "level": "basement",
+      "description": "15 people MR",
+      "space_area_m2": 55.78
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "103",
+      "level": "basement",
+      "description": "15 people MR",
+      "space_area_m2": 29.96
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "104",
+      "level": "basement",
+      "description": "Hallway",
+      "space_area_m2": 11.72
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "105",
+      "level": "basement",
+      "description": "boots",
+      "space_area_m2": 16.98
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "107",
+      "level": "basement",
+      "description": "Boots",
+      "space_area_m2": 18.53
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "108",
+      "level": "basement",
+      "description": "Hallway",
+      "space_area_m2": 8.98
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "110",
+      "level": "basement",
+      "description": "Bike parking",
+      "space_area_m2": 380.58
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "111",
+      "level": "basement",
+      "description": "Storage",
+      "space_area_m2": 82.09
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "113",
+      "level": "basement",
+      "description": "Office",
+      "space_area_m2": 79.35
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "114",
+      "level": "basement",
+      "description": "Office",
+      "space_area_m2": 101.2
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "115",
+      "level": "basement",
+      "description": "Office",
+      "space_area_m2": 50.0
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "116",
+      "level": "basement",
+      "description": "shower/changing area",
+      "space_area_m2": 12.54
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "117",
+      "level": "basement",
+      "description": "WC",
+      "space_area_m2": 15.53
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "118",
+      "level": "basement",
+      "description": "WC",
+      "space_area_m2": 14.86
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "123",
+      "level": "1 floor",
+      "description": "Auditorium (200 pepole)",
+      "space_area_m2": 191.35
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "124",
+      "level": "1 floor",
+      "description": "Multi purpose area",
+      "space_area_m2": 269.11
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "125",
+      "level": "1 floor",
+      "description": "15 people MR",
+      "space_area_m2": 55.72
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "127",
+      "level": "1 floor",
+      "description": "Hallway",
+      "space_area_m2": 9.72
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "129",
+      "level": "1 floor",
+      "description": "cafe (50 people)",
+      "space_area_m2": 180.32
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "130",
+      "level": "1 floor",
+      "description": "WC",
+      "space_area_m2": 19.52
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "131",
+      "level": "1 floor",
+      "description": "handicap WC",
+      "space_area_m2": 11.01
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "132",
+      "level": "1 floor",
+      "description": "Office",
+      "space_area_m2": 75.04
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "147",
+      "level": "1 floor",
+      "description": "Office",
+      "space_area_m2": 101.2
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "154",
+      "level": "basement",
+      "description": "6 people MR",
+      "space_area_m2": 20.91
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "155",
+      "level": "basement",
+      "description": "6 people MR",
+      "space_area_m2": 24.71
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "156",
+      "level": "1 floor",
+      "description": "Office",
+      "space_area_m2": 14.98
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "173",
+      "level": "1 floor",
+      "description": "6 people MR",
+      "space_area_m2": 26.22
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "183",
+      "level": "basement",
+      "description": "Tech",
+      "space_area_m2": 69.41
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "184",
+      "level": "1 floor",
+      "description": "shower/change",
+      "space_area_m2": 8.64
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "185",
+      "level": "basement",
+      "description": "AHU 4B flexible places",
+      "space_area_m2": 78.86
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "186",
+      "level": "basement",
+      "description": "Office",
+      "space_area_m2": 25.53
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "187",
+      "level": "basement",
+      "description": "escape stair/elevator",
+      "space_area_m2": 32.63
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "189",
+      "level": "basement",
+      "description": "Foyer",
+      "space_area_m2": 291.61
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "190",
+      "level": "basement",
+      "description": "Hallway",
+      "space_area_m2": 167.48
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "191",
+      "level": "basement",
+      "description": "Tech",
+      "space_area_m2": 100.93
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "192",
+      "level": "basement",
+      "description": "Tech",
+      "space_area_m2": 31.58
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "193",
+      "level": "basement",
+      "description": "Tech",
+      "space_area_m2": 32.8
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "194",
+      "level": "basement",
+      "description": "Tech",
+      "space_area_m2": 32.8
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "195",
+      "level": "basement",
+      "description": "Tech",
+      "space_area_m2": 51.28
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "196",
+      "level": "basement",
+      "description": "Tech",
+      "space_area_m2": 32.8
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "197",
+      "level": "basement",
+      "description": "Tech",
+      "space_area_m2": 51.28
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "198",
+      "level": "1 floor",
+      "description": "Reception/Atrium",
+      "space_area_m2": 242.22
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "199",
+      "level": "1 floor",
+      "description": "Office",
+      "space_area_m2": 107.4
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "200",
+      "level": "1 floor",
+      "description": "Office",
+      "space_area_m2": 25.03
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "201",
+      "level": "1 floor",
+      "description": "6 people MR",
+      "space_area_m2": 58.91
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "202",
+      "level": "1 floor",
+      "description": "Office",
+      "space_area_m2": 101.2
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "203",
+      "level": "1 floor",
+      "description": "Courtyard",
+      "space_area_m2": 302.52
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "205",
+      "level": "1 floor",
+      "description": "studen area",
+      "space_area_m2": 331.98
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "206",
+      "level": "1 floor",
+      "description": "hallway",
+      "space_area_m2": 186.81
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "207",
+      "level": "1 floor",
+      "description": "Boots",
+      "space_area_m2": 17.81
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "208",
+      "level": "1 floor",
+      "description": "Tech",
+      "space_area_m2": 35.6
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "225",
+      "level": "basement",
+      "description": "25 people MR",
+      "space_area_m2": 75.81
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "247",
+      "level": "floor 2 floor",
+      "description": "Office",
+      "space_area_m2": 26.86
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "248",
+      "level": "floor 2 floor",
+      "description": "6 people MR",
+      "space_area_m2": 61.18
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "249",
+      "level": "floor 2 floor",
+      "description": "Office",
+      "space_area_m2": 15.46
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "250",
+      "level": "floor 2 floor",
+      "description": "Office",
+      "space_area_m2": 104.75
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "251",
+      "level": "floor 2 floor",
+      "description": "Office",
+      "space_area_m2": 104.75
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "252",
+      "level": "floor 2 floor",
+      "description": "Office",
+      "space_area_m2": 131.4
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "253",
+      "level": "floor 2 floor",
+      "description": "Office",
+      "space_area_m2": 81.25
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "254",
+      "level": "floor 2 floor",
+      "description": "Office",
+      "space_area_m2": 142.38
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "255",
+      "level": "floor 2 floor",
+      "description": "Office",
+      "space_area_m2": 141.96
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "256",
+      "level": "floor 2 floor",
+      "description": "Office",
+      "space_area_m2": 7.48
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "257",
+      "level": "floor 2 floor",
+      "description": "Office",
+      "space_area_m2": 16.79
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "258",
+      "level": "floor 2 floor",
+      "description": "Office",
+      "space_area_m2": 74.06
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "259",
+      "level": "floor 2 floor",
+      "description": "15 people MR",
+      "space_area_m2": 31.56
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "260",
+      "level": "floor 2 floor",
+      "description": "15 people MR",
+      "space_area_m2": 31.83
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "261",
+      "level": "floor 2 floor",
+      "description": "Hallway",
+      "space_area_m2": 321.82
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "262",
+      "level": "floor 2 floor",
+      "description": "Hallway",
+      "space_area_m2": 227.6
+    },
+    {
+      "room_no": "",
+      "ifc_room_name": "263",
+      "level": "basement",
+      "description": "Tech",
+      "space_area_m2": 12.73
+    }
+  ]
+}
